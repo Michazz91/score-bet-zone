@@ -1,2 +1,2 @@
-# ScoreBezZone
+# ScoreBetZone
 Liga typerów
