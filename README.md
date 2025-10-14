@@ -1,2 +1,2 @@
-# ScoreBetZone
-Liga typerów
+# ScoreBetZone - scorebetzone.eu
+Liga typerów - obstawianie meczy
