@@ -28,7 +28,6 @@
 /var/bootstrap.php.cache
 /bin/*
 !bin/console
-!bin/composer_install.sh
 !bin/symfony_requirements
 /vendor/
 
