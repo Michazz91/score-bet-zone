@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">ScoreBetZone</string>
+    <string name="title_activity_main">ScoreBetZone</string>
+    <string name="package_name">com.scorebetzone.app</string>
+    <string name="custom_url_scheme">com.scorebetzone.app</string>
+</resources>
