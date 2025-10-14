@@ -1,2 +1,2 @@
 # ScoreBetZone
-Liga typerów
+Liga typerów - obstawianie meczy
