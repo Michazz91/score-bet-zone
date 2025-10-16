@@ -2,12 +2,18 @@
 
 namespace App\Controller;
 
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
 class DatabaseController extends AbstractController
 {
+    public function __construct(
+        private readonly EntityManagerInterface $entityManager,
+    ) {
+    }
+
     #[Route('/database/test')]
     public function test(): Response
     {
@@ -29,6 +35,29 @@ class DatabaseController extends AbstractController
         } catch (\PDOException $e) {
             return $this->render('database/test.html.twig', [
                 'value' => 'Błąd połączenia z bazą: '.$e->getMessage(),
+            ]);
+        }
+    }
+
+    #[Route('/database/test2')]
+    public function test2(): Response
+    {
+        try {
+            $conn = $this->entityManager->getConnection();
+            $connected = $conn->isConnected();
+
+            if (!$connected) {
+                // Wymuś połączenie, wyjęcie wyjątku przy błędzie
+                $conn->connect();
+                $connected = true;
+            }
+
+            return $this->render('database/test.html.twig', [
+                'value' => $connected ? 'Połączono z bazą danych.' : 'Połączenie nieudane.',
+            ]);
+        } catch (\Exception $e) {
+            return $this->render('database/test.html.twig', [
+                'value' => 'Błąd połączenia: '.$e->getMessage(),
             ]);
         }
     }
