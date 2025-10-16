@@ -5,6 +5,9 @@
     "prefer-stable": true,
     "require": {
         "php": ">=8.4",
+
+        "ext-pdo": "*",
+
         "ext-ctype": "*",
         "ext-iconv": "*",
         "doctrine/dbal": "^3",
