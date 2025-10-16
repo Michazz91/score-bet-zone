@@ -28,6 +28,7 @@
 /var/bootstrap.php.cache
 /bin/*
 !bin/console
+!bin/ovh/
 !bin/symfony_requirements
 /vendor/
 
@@ -58,7 +59,6 @@
 /config/secrets/prod/prod.decrypt.private.php
 /public/bundles/
 /var/
-/vendor/
 ###< symfony/framework-bundle ###
 
 ###> phpunit/phpunit ###
